@@ -29,4 +29,26 @@ while True:
     print("Moving Average: " + str(ma))
     print("Last Price: " + str(last_price))
 
+    # If MA is more than 10cents under price, and we haven't already bought
+    if ma + 0.1 < last_price and not pos_held:
+        print("Buy")
+        api.submit_order(
+            symbol=symb,
+            qty=1,
+            side='buy',
+            type='market',
+            time_in_force='gtc'
+        )
+        pos_held = True
+    elif ma - 0.1 > last_price and pos_held:  # If MA is more than 10cents above price, and we already bought
+        print("Sell")
+        api.submit_order(
+            symbol=symb,
+            qty=1,
+            side='sell',
+            type='market',
+            time_in_force='gtc'
+        )  
+        pos_held = False
+
     time.sleep(60)  # Wait one minute before retreiving more market data
