@@ -2,8 +2,8 @@ import alpaca_trade_api as tradeapi
 import numpy as np
 import time
 
-SEC_KEY = 'bcO995J1nB2W7iWbzIkXv4foX0GKaQJAYT8pX1fN'
-PUB_KEY = 'PKRQE96HW8BM6TO9V13V'
+SEC_KEY = 'qGvrvSjjSfeS6QBsBW90VfFs5gHnFSZwylAaQUsw'
+PUB_KEY = 'PK7096O42LK4VQCUZHYW'
 BASE_URL = 'https://paper-api.alpaca.markets'
 api = tradeapi.REST(key_id=PUB_KEY, secret_key=SEC_KEY, base_url=BASE_URL)
 
