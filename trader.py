@@ -8,6 +8,7 @@ BASE_URL = 'https://paper-api.alpaca.markets'
 api = tradeapi.REST(key_id=PUB_KEY, secret_key=SEC_KEY, base_url=BASE_URL)
 
 symb = "SPY"
+pos_held = False
 
 while True:
     print("")
